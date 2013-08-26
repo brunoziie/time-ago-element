@@ -1,4 +1,4 @@
-<polymer-element name="timeago" attributes="datetime refresh delay">
+<polymer-element name="timeago" attributes="datetime refresh">
 
 	<template>
 		<span id="timeago"></span>
@@ -25,13 +25,11 @@
 				if (this.refresh === true) {
 					setInterval(function () {
 						Timeago.refresh(element, datetime);
-					}, this.delay);
+					}, 60000);
 				}
 			},
-			
 			datetime: '0000-00-00 00:00:00',
-			refresh: true,
-			delay: 60000
+			refresh: true
 		});
 	</script>
 
