@@ -51,6 +51,8 @@ Attribute   | Options      | Default                 | Description
 
 * v0.0.1 August 25, 2013
 	* Created timeago element
+* v0.0.2 August 26, 2013
+	* Add delay attribute
 
 ## License
 
