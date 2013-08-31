@@ -1,4 +1,4 @@
-<polymer-element name="timeago" attributes="datetime refresh delay">
+<polymer-element name="timeago" attributes="datetime refresh delay lang">
 
 	<template>
 		<span id="timeago"></span>
@@ -6,8 +6,18 @@
 
 	<script>
 		Timeago = {
+			moment: null,
+
+			init: function (lang)
+			{
+				this.moment = moment();
+				this.moment.format('YYYY-MM-DD HH:mm:ss');
+				this.moment.lang(lang);
+			},
+
 			getTimeAgoText: function (datetime) {
-				return moment(datetime, 'YYYY-MM-DD HH:mm:ss').fromNow();
+				this.moment.add(datetime);
+				return this.moment.fromNow();
 			},
 
 			refresh: function (element, datetime) {
@@ -20,6 +30,7 @@
 				var datetime = this.datetime,
 					element = this.$.timeago;
 
+				Timeago.init(this.lang);
 				element.innerHTML = Timeago.getTimeAgoText(this.datetime);
 
 				if (this.refresh === true) {
