@@ -9,12 +9,41 @@
 
 	<!-- Importing Moment.js library -->
 	<script src="lib/moment.min.js"></script>
+	<script src="lib/lang/pt-br.js"></script>
+	<script src="lib/lang/es.js"></script>
+	<script src="lib/lang/de.js"></script>
+	<script src="lib/lang/it.js"></script>
 
 	<!-- Importing Custom Elements -->
 	<link rel="import" href="src/timeago.html">
 </head>
 <body>
 	<!-- Using Custom Elements -->
-	<timeago datetime="2013-08-25 20:40:00"></timeago>
+	<ul>
+		<li>
+			<b><timeago datetime="2013-08-25 20:40:00"></timeago></b>
+			<i>=> Without lang attribute (default or latest lang setted)</i>
+		</li>
+
+		<li>
+			<b><timeago datetime="2013-08-25 20:40:00" lang="pt-br"></timeago></b>
+			<i>=> With lang attribute (pt-br)</i>
+		</li>
+
+		<li>
+			<b><timeago datetime="2013-08-25 20:40:00" lang="es"></timeago></b>
+			<i>=> With lang attribute (es)</i>
+		</li>
+		
+		<li>
+			<b><timeago datetime="2013-08-25 20:40:00" lang="de"></timeago></b>
+			<i>=> With lang attribute (de)</i>
+		</li>
+
+		<li>
+			<b><timeago datetime="2013-08-25 20:40:00" lang="en"></timeago></b>
+			<i>=> With lang attribute (en)</i>
+		</li>
+	</ul>
 </body>
 </html>

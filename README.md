@@ -20,6 +20,15 @@ Timeago element using Polymer and Moment.js
 	```html
 	<script src="lib/moment.min.js"></script>
 	```
+	2.1. If you need set a globally specific language, import the moment lang file
+	```html
+	<script src="lib/lang/pt-br.js"></script>
+	```
+	2.2. If you need set a locally specific language, import the moment lang file and set lang attribute
+	```html
+	<timeago datetime="2013-08-25 20:40:00" lang="pt-br"></timeago>
+	```
+
 3. Import Custom Element:
 
 	```html
@@ -33,11 +42,12 @@ Timeago element using Polymer and Moment.js
 
 ## Options
 
-Attribute   | Options      | Default                 | Description
----         | ---          | ---                     | ---
-`datetime`  | *string*     | `0000-00-00 00:00:00`   | Date and time in YYYY-MM-DD HH:mm:ss format
-`refresh`   | *boolean*    | `true`               	 | Auto refresh
-`refresh`   | *int*        | `60000`               	 | Delay to auto refresh (in milliseconds)
+Attribute   | Options      | Default                 			| Description
+---         | ---          | ---                     			| ---
+`datetime`  | *string*     | `0000-00-00 00:00:00`   			| Date and time in YYYY-MM-DD HH:mm:ss format
+`refresh`   | *boolean*    | `true`               	 			| Auto refresh
+`refresh`   | *int*        | `60000`               	 			| Delay to auto refresh (in milliseconds)
+`lang`   		| *string*     | `en` or latest lang imported | Language for output
 
 
 ## Contributing
@@ -54,6 +64,8 @@ Attribute   | Options      | Default                 | Description
 	* Created timeago element
 * v0.0.2 August 26, 2013
 	* Add delay attribute
+* v0.0.3 August 31, 2013
+	* Add lang attribute
 
 ## License
 
