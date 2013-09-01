@@ -37,7 +37,7 @@ Attribute   | Options      | Default                 | Description
 ---         | ---          | ---                     | ---
 `datetime`  | *string*     | `0000-00-00 00:00:00`   | Date and time in YYYY-MM-DD HH:mm:ss format
 `refresh`   | *boolean*    | `true`               	 | Auto refresh
-`refresh`   | *int*        | `60000`               	 | Delay to auto refresh (in milliseconds)
+`delay`     | *int*        | `60000`               	 | Delay to auto refresh (in milliseconds)
 
 
 ## Contributing
