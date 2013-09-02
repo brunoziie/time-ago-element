@@ -5,37 +5,37 @@
 	</template>
 
 	<script>
-		Timeago = {
-			moment: null,
+		function Timeago (datetime, lang) {
+			var _moment = null,
+					_localLang = null;
 
-			init: function (lang)
+			this.getTimeAgoText = function () {
+				return _moment.fromNow();
+			};
+
+			this.refresh = function (element) {
+				element.innerHTML = this.getTimeAgoText();
+			};
+
+			(function (datetime, lang)
 			{
-				this.moment = moment();
-				this.moment.format('YYYY-MM-DD HH:mm:ss');
-				this.moment.lang(lang);
-			},
-
-			getTimeAgoText: function (datetime) {
-				this.moment.add(datetime);
-				return this.moment.fromNow();
-			},
-
-			refresh: function (element, datetime) {
-				element.innerHTML = this.getTimeAgoText(datetime);
-			}
+				_localLang = lang || "en";
+				_moment = moment(datetime, 'YYYY-MM-DD HH:mm:ss');
+				_moment.lang(_localLang);
+			}) (datetime, lang);
 		};
 
 		Polymer('timeago', {
 			created: function() {
 				var datetime = this.datetime,
-					element = this.$.timeago;
-
-				Timeago.init(this.lang);
-				element.innerHTML = Timeago.getTimeAgoText(this.datetime);
+						element = this.$.timeago,
+						timeago = new Timeago(datetime, this.lang);
+				
+				element.innerHTML = timeago.getTimeAgoText();
 
 				if (this.refresh === true) {
 					setInterval(function () {
-						Timeago.refresh(element, datetime);
+						timeago.refresh(element);
 					}, this.delay);
 				}
 			},
