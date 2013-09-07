@@ -1,6 +1,6 @@
-# &lt;timeago&gt;
+# &lt;time-ago&gt;
 
-Timeago element using Polymer and Moment.js
+Time Ago element using Polymer and Moment.js
 
 > Maintained by [Bruno Ziiê](https://github.com/brunoziie).
 
@@ -28,7 +28,7 @@ Timeago element using Polymer and Moment.js
 4. Start using it!
 
 	```html
-	<timeago datetime="2013-08-25 20:40:00"></timeago>
+	<time-ago datetime="2013-08-25 20:40:00"></timeago>
 	```
 
 ## Options

@@ -1,4 +1,4 @@
-<polymer-element name="timeago" attributes="datetime refresh delay">
+<polymer-element name="time-ago" attributes="datetime refresh delay">
 
 	<template>
 		<span id="timeago"></span>
@@ -15,7 +15,7 @@
 			}
 		};
 
-		Polymer('timeago', {
+		Polymer('time-ago', {
 			created: function() {
 				var datetime = this.datetime,
 					element = this.$.timeago;
