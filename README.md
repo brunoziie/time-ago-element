@@ -23,7 +23,7 @@ Time Ago element using Polymer and Moment.js
 3. Import Custom Element:
 
 	```html
-	<link rel="import" href="src/timeago.html">
+	<link rel="import" href="src/time-ago.html">
 	```
 4. Start using it!
 
