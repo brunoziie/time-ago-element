@@ -1,0 +1,35 @@
+<polymer-element name="time-ago" attributes="datetime refresh delay">
+    <template>
+        <span id="timeago"></span>
+    </template>
+    
+    <script>
+        Timeago = {
+            getTimeAgoText: function (datetime) {
+                return moment(datetime, 'YYYY-MM-DD HH:mm:ss').fromNow();
+            },
+    
+            refresh: function (element, datetime) {
+                element.innerHTML = this.getTimeAgoText(datetime);
+            }
+        };
+    
+        Polymer('time-ago', {
+            created: function() {
+                var datetime = this.datetime,
+                    element = this.$.timeago;
+    
+                element.innerHTML = Timeago.getTimeAgoText(this.datetime);
+    
+                if (this.refresh === true) {
+                    setInterval(function () {
+                        Timeago.refresh(element, datetime);
+                    }, this.delay);
+                }
+            },
+            datetime: '0000-00-00 00:00:00',
+            refresh: true,
+            delay: 60000
+        });
+    </script>
+</polymer-element>
