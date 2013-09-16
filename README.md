@@ -6,7 +6,7 @@ Time Ago element using Polymer and Moment.js
 
 ## Demo
 
-> [Check it live](http://brunoziie.github.io/timeago-element).
+> [Check it live](http://brunoziie.github.io/time-ago-element).
 
 ## Usage
 
