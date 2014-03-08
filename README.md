@@ -28,7 +28,7 @@ Time Ago element using Polymer and Moment.js
 4. Start using it!
 
 	```html
-	<time-ago datetime="2013-08-25 20:40:00"></timeago>
+	<time-ago datetime="2013-08-25 20:40:00"></time-ago>
 	```
 
 ## Options
