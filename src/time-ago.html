@@ -8,27 +8,38 @@
             'use strict';
 
             var Timeago = {
-                getTimeAgoText: function (datetime) {
-                    return moment(datetime, 'YYYY-MM-DD HH:mm:ss').fromNow();
+                    getTimeAgoText: function (datetime) {
+                        return moment(datetime, 'YYYY-MM-DD HH:mm:ss').fromNow();
+                    },
+            
+                    refresh: function (element, datetime) {
+                        element.innerHTML = this.getTimeAgoText(datetime);
+                    }
                 },
-        
-                refresh: function (element, datetime) {
-                    element.innerHTML = this.getTimeAgoText(datetime);
-                }
-            };
+                interval;
         
             Polymer('time-ago', {
-                ready: function() {
+                setup: function () {
                     var datetime = this.datetime,
                         element = this.$.timeago;
         
                     element.innerHTML = Timeago.getTimeAgoText(this.datetime);
         
                     if (this.refresh === true) {
-                        setInterval(function () {
+                        if (typeof interval !== 'undefined') {
+                            clearInterval(interval);
+                        }
+
+                        interval = setInterval(function () {
                             Timeago.refresh(element, datetime);
                         }, this.delay);
                     }
+                },
+                ready: function() {
+                    this.setup();
+                },
+                attributeChanged: function () {
+                    this.setup();
                 },
                 datetime: '0000-00-00 00:00:00',
                 refresh: true,
