@@ -13,7 +13,9 @@ Time Ago element using Polymer and Moment.js
 1. Import Web Components' polyfill:
 
 	```html
-	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.0.20130816/polymer.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.3.4/platform.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.3.4/polymer.js"></script>	
+
 	```
 2. Import Moment.js library
 
