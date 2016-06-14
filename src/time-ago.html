@@ -20,10 +20,10 @@
         
             Polymer('time-ago', {
                 setup: function () {
-                    var datetime = this.datetime,
+                    var datetime = moment(this.datetime),
                         element = this.$.timeago;
         
-                    element.innerHTML = Timeago.getTimeAgoText(this.datetime);
+                    element.innerHTML = Timeago.getTimeAgoText(datetime);
         
                     if (this.refresh === true) {
                         if (typeof interval !== 'undefined') {
